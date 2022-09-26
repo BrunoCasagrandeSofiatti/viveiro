@@ -1,0 +1,199 @@
+{% load static %}
+{% load bootstrap4 %}
+
+{% include 'topo.html' %}
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper" style="margin-top: -15px;">
+          <div class="d-sm-flex align-items-top justify-content-between mb-1">
+            <h3 class="h4 mb-0 text-gray-800"></h3>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Produtos</li>
+            </ol>
+          </div>
+
+          <div class="row mb-3">
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-lg-12" >
+              <div class="card mb-4" style="top: -18px;">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style="border-bottom: 1px solid #ebedf2;">
+                  <h6 class="m-0 font-weight-bold text-primary">Manutenção de Produtos</h6>
+                  <div class="dropdown no-arrow">
+                    <button type="button" onclick="$('#ModalCadastro').modal('show')" class="btn btn-primary btn-sm">Novo Produto</button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                      <table id="table-stations-off" class="display" style="width:100%">
+                        <thead>
+                          <tr>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Data Cadastro</th>
+                            <th>Ações</th>
+                          </tr>
+                        </thead>
+                      </table> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Logout -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Cadastro -->
+          <div class="modal fade bd-example-modal-lg" id="ModalCadastro" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="title_modal">Cadastro de Produto </h5> 
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                      <div class="modal-body">
+                        <div class="form-group" >
+                           <form>
+                             <div class="form-row">                    
+                               <div class="col">
+                                 <input type="hidden" id="id_paciente" class="form-control">
+                                 <label for="nomeConvenio">Descrição</label>
+                                 <input id="id_descricao_produto" type="text" class="form-control" placeholder="Descrição do produto">
+                               </div>
+                               <div class="col-2">
+                                 <label for="categoria">Categoria</label>
+                                 <select class="form-control" id="id_categoria">
+                                   <option value="" disabled selected>Escolher...</option>
+                                 </select>
+                               </div>
+                               <div class="col-3">
+                                 <label for="nomeConvenio">Data de Cadastro</label>
+                                 <input type="date" class="form-control" name="data_nascimento" id="data_cadastro_produto">
+                               </div>
+                             </div>
+                             </div>
+                              <div class="modal-footer">
+                                <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                                <button type="cancel" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancelar</button>
+                              </div>
+                            </form> 
+                       </div>        
+                   </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                      
+          
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    
+          
+                    </div>
+                  </div>      
+              </div>
+            </div>
+          </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      {% include 'rodape.html' %}
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'js/ruang-admin.min.js' %}"></script>
+  <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+  
+
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<!-- Moment.js: -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+	<!-- Brazilian locale file for moment.js-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/pt-br.js"></script>
+
+	<!-- Ultimate date sorting plug-in-->
+	<script src="https://cdn.datatables.net/plug-ins/1.10.21/sorting/datetime-moment.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+      load_select_categoria();
+      
+			moment.locale('pt-br');
+			$.fn.dataTable.moment( 'DD/MM/YYYY' );
+			$('#table-stations-off').DataTable({
+				language: {
+					url: 'https://cdn.datatables.net/plug-ins/1.12.1/i18n/pt-BR.json'
+				},
+				columns: [
+					{ width: "28%" },
+					{ width: "18%" },
+          { width: "15%" },
+					{ width: "8%" }
+				],
+				order: [[1, 'desc']],
+			});
+      get_produtos_cadastrados();
+		});
+
+    function load_select_categoria(){
+      var endpoint = `/selectcategoria/`
+      $.ajax({
+        url: endpoint,
+        type:'get',
+        headers: { 'Content-Type': 'application/json' },
+        success: function(data) {
+          for (var index in data){
+              opcao = '<option value ="' + data[index].id + '">' +
+                data[index].descricao + '</option>';
+                $('#id_categoria').append(opcao);     
+          };
+        },
+        error: function(error){
+          console.error(error)
+        },
+        complete: function(data){
+        },
+        cache: false
+      });
+    };
+
+    </script>
+    
+    <script type="text/javascript" src='{% static "script.js" %}'></script>	
+   
+</body>
+
+</html>

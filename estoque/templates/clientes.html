@@ -1,0 +1,150 @@
+          <!-- Modal Cadastro -->
+        <div class="modal fade bd-example-modal-lg" id="ModalCadastro" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="title_modal">Cadastro de Cliente </h5> 
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ficha Básica</a>
+                    </li>
+                 <!--   <li class="nav-item"> -->
+                 <!--    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ficha Complementar</a> -->
+                 <!--  </li> -->
+                 <!--   <li class="nav-item"> -->
+                 <!--     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Históricos</a> -->
+                 <!--   </li> -->
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                      <div class="modal-body">
+                        <div class="form-group" >
+                           <form>
+                             <div class="form-row">                    
+                               <div class="col">
+                                 <input type="hidden" id="id_paciente" class="form-control">
+                                 <label for="nomeConvenio">Nome</label>
+                                 <input id="nome" type="text" class="form-control" placeholder="Nome Completo">
+                               </div>
+                               <div class="col-2">
+                                 <label for="Sexo">Sexo</label>
+                                 <select class="form-control" id="sexo">
+                                   <option value="" disabled selected>Escolher...</option>
+                                   <option value="F">Feminino</option>
+                                   <option value="M">Masculino</option>
+                                   <option value="O">Outros</option>
+                                 </select>
+                               </div>
+                               <div class="col-2">
+                                 <label for="nomeConvenio">CPF</label>
+                                 <input type="text" class="form-control" id="cpf" placeholder="00000000000">
+                               </div>
+                               <div class="col-3">
+                                 <label for="nomeConvenio">Data de Nascimento</label>
+                                 <input type="date" class="form-control" name="data_nascimento" id="data_nascimento">
+                               </div>
+                             </div>
+                           </form> 
+                           </div>
+                           <div class="form-group">
+                           <form>
+                             <div class="form-row">
+                               <div class="col-2">
+                                 <label for="nomeConvenio">CEP</label>
+                                 <input type="text" class="form-control"  id="cep" placeholder="00000-000">
+                               </div>
+                               <div class="col">
+                                 <label for="exampleSelect1">Logradouro</label>
+                                 <input type="text" class="form-control" id="lagradouro" placeholder="Logradouro">
+                                 </select>
+                               </div>
+                               <div class="col-1">
+                                 <label for="exampleSelect1" >Número</label>
+                                 <input type="text" class="form-control" id="numero" placeholder="N°">
+                                 </select>
+                               </div>
+                               <div class="col-1">
+                                 <label for="uf">UF</label>
+                                 <input type="text" class="form-control"  id="uf" placeholder="UF">
+                               </div>
+                               <div class="col">
+                                 <label for="cidade">Cidade</label>
+                                 <input type="text" class="form-control" id="cidade" placeholder="Cidade">
+                               </div>
+                             </div>
+                           </form> 
+                           </div>
+                     
+                   
+                             <div class="form-group">
+                               <form>
+                                 <div class="form-row">
+                                   <div class="col-3">
+                                     <label for="Convenio">Convênio</label>
+                                       <div class="input-group">
+                                         <select id="id_convenio" name="id_convenio" class="form-control">
+                                         </select>
+                                       </div>
+                                   </div>
+                                   <div class="col-2">
+                                     <label for="plano">Plano</label>
+                                     <input type="text" class="form-control" name="plano" id="plano" placeholder="Plano">
+                                   </div>
+                                   <div class="col-3">
+                                     <label for="carteirinha">Nº Carterinha</label>
+                                     <input type="text" class="form-control" name="carteirinha" id="carteirinha" placeholder="Nº Carterinha">
+                                   </div>
+                                   <div class="col-3">
+                                     <label for="data_validade">Data de Validade</label>
+                                     <input type="date" class="form-control" name="data_validade" id="data_validade">
+                                   </div>
+                                 </div>
+                               </form> 
+                               </div>
+           
+                               <div class="form-group">
+                                 <form>
+                                   <div class="form-row">
+                                     <div class="col-2">
+                                       <label for="celular">Celular</label>
+                                       <input type="tel" class="form-control" name="celular" id="celular" placeholder="(99) 99999 - 9999">
+                                     </div>
+                                     <div class="col-2">
+                                       <label for="telefone">Telefone</label>
+                                       <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="(99) 9999 - 9999">
+                                     </div>
+                                     <div class="col-3">
+                                       <label for="email">E-Mail</label>
+                                       <input type="text" class="form-control" name='email' id="email" placeholder="exemplo@exemplo.com.br">
+                                       </select>
+                                     </div>
+                                   </div>
+                                   <div class="mb-4">
+                                     <label for="validationTextarea">Observação</label>
+                                     <textarea class="form-control" id="observacao" name="observacao" placeholder="Observação" required></textarea>
+                                   </div>
+                             <div class="modal-footer">
+                               <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                               <button type="cancel" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancelar</button>
+                             </div>
+                            </form> 
+                       </div>        
+                   </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                      
+          
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    
+          
+                    </div>
+                  </div>      
+              </div>
+            </div>
+        </div>

@@ -1,0 +1,14 @@
+  /* SELECT2 */
+  .select2-search__field{
+    height: 25px !important;
+  }
+  /* DATATABLES */
+  .dataTables_length, .dataTables_filter, .dataTables_paginate{
+    font-size: 14px ! important;
+  }
+  .paging_simple_numbers{
+    font-size: 12px ! important;
+  }
+  #table-stations-off td{
+    font-size: 12px ! important;
+  }
