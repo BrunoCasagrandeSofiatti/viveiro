@@ -9,7 +9,7 @@
             <h3 class="h4 mb-0 text-gray-800"></h3>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Produtos</li>
+              <li class="breadcrumb-item active" aria-current="page">Categorias</li>
             </ol>
           </div>
 
@@ -18,9 +18,9 @@
             <div class="col-xl-12 col-lg-12" >
               <div class="card mb-4" style="top: -18px;">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style="border-bottom: 1px solid #ebedf2;">
-                  <h6 class="m-0 font-weight-bold text-primary">Manutenção de Produtos</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Manutenção de Categorias</h6>
                   <div class="dropdown no-arrow">
-                    <button type="button" onclick="$('#ModalCadastro').modal('show')" class="btn btn-primary btn-sm">Novo Produto</button>
+                    <button type="button" onclick="$('#ModalCadastro').modal('show')" class="btn btn-primary btn-sm">Nova Categoria</button>
                   </div>
                 </div>
                 <div class="card-body">
@@ -29,8 +29,6 @@
                         <thead>
                           <tr>
                             <th>Descrição</th>
-                            <th>Categoria</th>
-                            <th>Data Cadastro</th>
                             <th>Ações</th>
                           </tr>
                         </thead>
@@ -41,28 +39,7 @@
             </div>
           </div>
 
-          <!-- Modal Logout -->
-          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="login.html" class="btn btn-primary">Logout</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          
           <!-- Modal Cadastro -->
           <div class="modal fade bd-example-modal-lg" id="ModalCadastro" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
@@ -135,8 +112,7 @@
 
 	<script type="text/javascript">
 		$(document).ready(function () {
-      load_select_categoria();
-            
+                  
 			moment.locale('pt-br');
 			$.fn.dataTable.moment( 'DD/MM/YYYY' );
 			$('#table-stations-off').DataTable({
@@ -145,37 +121,13 @@
 				},
 				columns: [
 					{ width: "28%" },
-					{ width: "18%" },
-          { width: "15%" },
 					{ width: "8%" }
 				],
 				order: [[1, 'desc']],
 			});
-      get_produtos_cadastrados();
+      get_categorias_cadastradas();
 		});
   
-
-    function load_select_categoria(){
-      var endpoint = `/selectcategoria/`
-      $.ajax({
-        url: endpoint,
-        type:'get',
-        headers: { 'Content-Type': 'application/json' },
-        success: function(data) {
-          for (var index in data){
-              opcao = '<option value ="' + data[index].id + '">' +
-                data[index].descricao + '</option>';
-                $('#id_categoria').append(opcao);     
-          };
-        },
-        error: function(error){
-          console.error(error)
-        },
-        complete: function(data){
-        },
-        cache: false
-      });
-    };
 
     // Savar um novo produto
 		function newproduct(){  

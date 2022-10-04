@@ -46,9 +46,15 @@
         Cadastros
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{% url 'produtos' %}">
           <i class="fas fa-fw fa-tree"></i>
           <span>Produtos</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'categorias' %}">
+          <i class="fas fa-fw fa-plus-square"></i>
+          <span>Categorias</span>
         </a>
       </li>
       <li class="nav-item">
@@ -62,7 +68,7 @@
         Controle
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="produtos.html">
+        <a class="nav-link" href="{% url 'estoque' %}">
           <i class="fas fa-fw fa-hockey-puck"></i>
           <span>Estoque</span>
         </a>
